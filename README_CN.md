@@ -57,6 +57,8 @@ cp -r remotion-design-master/src/* your-project/src/remotion/design/
 
 ## 使用方法
 
+**无需编程知识！** 只需用自然语言描述你想要的效果，AI 助手会为你生成专业的视频代码。
+
 安装后，AI 助手将自动：
 
 1. **应用设计规则** - 创建视频组件时遵循 `rules/` 中的 14 条设计原则

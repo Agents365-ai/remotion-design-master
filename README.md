@@ -59,6 +59,8 @@ cp -r remotion-design-master/src/* your-project/src/remotion/design/
 
 ## Usage
 
+**No programming knowledge required!** Just describe what you want in natural language, and the AI assistant will generate professional video code for you.
+
 Once installed, the AI assistant will automatically:
 
 1. **Apply design rules** - Follow the 14 design principles in `rules/` when creating video components
