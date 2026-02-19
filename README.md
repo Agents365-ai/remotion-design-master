@@ -17,9 +17,67 @@ This skill provides design principles, reusable components, and visual guideline
 - 14 design rule documents
 - Ready-to-use templates and examples
 
+## Installation
+
+### Claude Code
+
+```bash
+# Clone to Claude Code skills directory
+git clone https://github.com/Agents365-ai/remotion-design-master.git ~/.claude/skills/remotion-design-master
+```
+
+The skill will be automatically available in Claude Code. Claude will reference the design rules and components when you work on Remotion video projects.
+
+### OpenCode
+
+```bash
+# Clone to OpenCode skills directory
+git clone https://github.com/Agents365-ai/remotion-design-master.git ~/.opencode/skills/remotion-design-master
+```
+
+Or add to your `~/.opencode/settings.json`:
+
+```json
+{
+  "skills": [
+    "~/.opencode/skills/remotion-design-master"
+  ]
+}
+```
+
+### Manual Installation
+
+If you prefer to use the components directly without the skill system:
+
+```bash
+# Clone anywhere
+git clone https://github.com/Agents365-ai/remotion-design-master.git
+
+# Copy components to your Remotion project
+cp -r remotion-design-master/src/* your-project/src/remotion/design/
+```
+
+## Usage
+
+Once installed, the AI assistant will automatically:
+
+1. **Apply design rules** - Follow the 14 design principles in `rules/` when creating video components
+2. **Use design tokens** - Reference centralized colors, typography, spacing from `src/tokens/`
+3. **Suggest components** - Recommend appropriate layout, animation, and UI components
+4. **Enforce constraints** - Ensure "fill the screen" layout and other hard constraints
+
+### Example Prompts
+
+```
+"Create a hero section for my product video"
+"Add a data dashboard with animated counters"
+"Apply the dark tech theme to this section"
+"Make the content fade in with stagger animation"
+```
+
 ## Quick Start
 
-### 1. Copy Components to Your Project
+### Copy Components to Your Project
 
 ```bash
 cp -r ~/.claude/skills/remotion-design-master/src/* your-project/src/remotion/design/

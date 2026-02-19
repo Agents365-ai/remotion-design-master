@@ -15,9 +15,67 @@
 - 14 份设计规则文档
 - 即用型模板和示例
 
+## 安装
+
+### Claude Code
+
+```bash
+# 克隆到 Claude Code 技能目录
+git clone https://github.com/Agents365-ai/remotion-design-master.git ~/.claude/skills/remotion-design-master
+```
+
+技能将自动在 Claude Code 中可用。当你处理 Remotion 视频项目时，Claude 会参考设计规则和组件。
+
+### OpenCode
+
+```bash
+# 克隆到 OpenCode 技能目录
+git clone https://github.com/Agents365-ai/remotion-design-master.git ~/.opencode/skills/remotion-design-master
+```
+
+或者添加到 `~/.opencode/settings.json`：
+
+```json
+{
+  "skills": [
+    "~/.opencode/skills/remotion-design-master"
+  ]
+}
+```
+
+### 手动安装
+
+如果你更喜欢直接使用组件而不使用技能系统：
+
+```bash
+# 克隆到任意位置
+git clone https://github.com/Agents365-ai/remotion-design-master.git
+
+# 复制组件到你的 Remotion 项目
+cp -r remotion-design-master/src/* your-project/src/remotion/design/
+```
+
+## 使用方法
+
+安装后，AI 助手将自动：
+
+1. **应用设计规则** - 创建视频组件时遵循 `rules/` 中的 14 条设计原则
+2. **使用设计令牌** - 引用 `src/tokens/` 中集中管理的颜色、字体、间距
+3. **推荐组件** - 建议合适的布局、动画和 UI 组件
+4. **强制约束** - 确保"填满屏幕"布局和其他硬性约束
+
+### 示例提示
+
+```
+"为我的产品视频创建一个 Hero 部分"
+"添加一个带动画计数器的数据仪表盘"
+"对这个部分应用暗黑科技主题"
+"让内容使用交错动画淡入"
+```
+
 ## 快速开始
 
-### 1. 复制组件到你的项目
+### 复制组件到你的项目
 
 ```bash
 cp -r ~/.claude/skills/remotion-design-master/src/* your-project/src/remotion/design/
