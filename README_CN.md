@@ -168,14 +168,40 @@ import { FullBleed, ContentArea, Title, darkTech } from './design'
 
 ## 布局组件
 
+7 个布局组件用于构建视频画面：
+
+### 容器布局
+
+| FullBleed | ContentArea | SafeArea |
+|:---------:|:-----------:|:--------:|
+| ![FullBleed](docs/images/layouts/01-fullbleed.png) | ![ContentArea](docs/images/layouts/02-contentarea.png) | ![SafeArea](docs/images/layouts/03-safearea.png) |
+| 根容器，填满整个画面 | 85-95% 宽度，带内边距 | 广播安全区域 |
+
+### 排列布局
+
+| Grid | Stack |
+|:----:|:-----:|
+| ![Grid](docs/images/layouts/04-grid.png) | ![Stack](docs/images/layouts/05-stack.png) |
+| 多列 CSS Grid 网格 | VStack / HStack 弹性布局 |
+
+### 媒体布局
+
+| CoverMedia | DualLayerMedia |
+|:----------:|:--------------:|
+| ![CoverMedia](docs/images/layouts/06-covermedia.png) | ![DualLayerMedia](docs/images/layouts/07-duallayermedia.png) |
+| 全屏 `objectFit: cover` | 模糊背景 + 清晰前景（非 16:9） |
+
+### 快速参考
+
 | 组件 | 用途 |
 |------|------|
 | `<FullBleed>` | 根容器，`inset: 0; overflow: hidden` |
 | `<ContentArea>` | 内容包装器，85-95% 宽度 |
+| `<SafeArea>` | 广播标题安全区域 |
+| `<Grid>` | CSS Grid 多列布局 |
+| `<Stack>` | Flexbox 垂直/水平堆叠 |
 | `<CoverMedia>` | 全屏媒体，`objectFit: cover` |
 | `<DualLayerMedia>` | 模糊背景 + 清晰前景（用于非 16:9 素材） |
-| `<Grid>` | CSS Grid 辅助组件 |
-| `<Stack>` / `<HStack>` / `<VStack>` | Flexbox 布局 |
 
 ## 动画基元
 
