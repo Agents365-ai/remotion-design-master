@@ -170,14 +170,40 @@ import { FullBleed, ContentArea, Title, darkTech } from './design'
 
 ## Layout Components
 
+7 layout components for building video compositions:
+
+### Container Layouts
+
+| FullBleed | ContentArea | SafeArea |
+|:---------:|:-----------:|:--------:|
+| ![FullBleed](docs/images/layouts/01-fullbleed.png) | ![ContentArea](docs/images/layouts/02-contentarea.png) | ![SafeArea](docs/images/layouts/03-safearea.png) |
+| Root container, fills entire frame | 85-95% width with padding | Broadcast-safe zones |
+
+### Arrangement Layouts
+
+| Grid | Stack |
+|:----:|:-----:|
+| ![Grid](docs/images/layouts/04-grid.png) | ![Stack](docs/images/layouts/05-stack.png) |
+| Multi-column CSS Grid | VStack / HStack flexbox |
+
+### Media Layouts
+
+| CoverMedia | DualLayerMedia |
+|:----------:|:--------------:|
+| ![CoverMedia](docs/images/layouts/06-covermedia.png) | ![DualLayerMedia](docs/images/layouts/07-duallayermedia.png) |
+| Full-bleed `objectFit: cover` | Blurred BG + clear FG (non-16:9) |
+
+### Quick Reference
+
 | Component | Purpose |
 |-----------|---------|
 | `<FullBleed>` | Root container with `inset: 0; overflow: hidden` |
 | `<ContentArea>` | Content wrapper, 85-95% width |
+| `<SafeArea>` | Title-safe zone for broadcast |
+| `<Grid>` | CSS Grid multi-column layout |
+| `<Stack>` | Flexbox vertical/horizontal stacking |
 | `<CoverMedia>` | Full-bleed media with `objectFit: cover` |
 | `<DualLayerMedia>` | Blurred background + clear foreground for non-16:9 |
-| `<Grid>` | CSS Grid helper |
-| `<Stack>` / `<HStack>` / `<VStack>` | Flexbox layouts |
 
 ## Animation Primitives
 
