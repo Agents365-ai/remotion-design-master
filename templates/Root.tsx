@@ -13,6 +13,7 @@
 
 import { Composition, Still } from 'remotion'
 import { MyVideo } from './Video'
+import { Thumbnail16x9, Thumbnail4x3 } from './Thumbnail'
 
 // Import timing if available
 // import timing from '../../videos/your-video/timing.json'
@@ -40,12 +41,21 @@ export const RemotionRoot = () => {
         defaultProps={{}}
       />
 
-      {/* 16:9 Thumbnail for video platforms */}
+      {/* 16:9 Thumbnail for Bilibili (4K) */}
       <Still
         id="Thumbnail16x9"
-        component={MyVideo}
-        width={1920}
-        height={1080}
+        component={Thumbnail16x9}
+        width={3840}
+        height={2160}
+        defaultProps={{}}
+      />
+
+      {/* 4:3 Thumbnail for Bilibili (4K height) */}
+      <Still
+        id="Thumbnail4x3"
+        component={Thumbnail4x3}
+        width={2880}
+        height={2160}
         defaultProps={{}}
       />
 
