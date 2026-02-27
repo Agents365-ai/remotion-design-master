@@ -169,17 +169,6 @@ export const MyVideo = () => {
         {/* Audio Track */}
         <Audio src={staticFile('videos/your-video/podcast_audio.wav')} />
 
-        {/* Chapter Progress Bar (optional) */}
-        <ChapterProgressBar
-          chapters={typedTiming.sections.map(s => ({
-            name: s.name,
-            label: s.label || s.name,
-            start_frame: s.start_frame,
-            duration_frames: s.duration_frames,
-          }))}
-          totalFrames={typedTiming.total_frames}
-        />
-
         {/* Sections */}
         {hero && (
           <Sequence from={hero.start_frame} durationInFrames={hero.duration_frames}>
@@ -205,6 +194,17 @@ export const MyVideo = () => {
           </Sequence>
         )}
       </AbsoluteFill>
+
+      {/* Chapter Progress Bar - MUST be outside scale(2) wrapper for correct sizing */}
+      <ChapterProgressBar
+        chapters={typedTiming.sections.map(s => ({
+          name: s.name,
+          label: s.label || s.name,
+          start_frame: s.start_frame,
+          duration_frames: s.duration_frames,
+        }))}
+        totalFrames={typedTiming.total_frames}
+      />
     </AbsoluteFill>
   )
 }

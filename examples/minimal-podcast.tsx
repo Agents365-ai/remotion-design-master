@@ -156,12 +156,6 @@ export const MinimalPodcast = () => {
         {/* Audio (uncomment when you have audio file) */}
         {/* <Audio src={staticFile('podcast_audio.wav')} /> */}
 
-        {/* Chapter Progress Bar */}
-        <ChapterProgressBar
-          chapters={timing.sections}
-          totalFrames={timing.total_frames}
-        />
-
         {/* Sections */}
         <Sequence from={0} durationInFrames={180}>
           <IntroSection />
@@ -179,6 +173,12 @@ export const MinimalPodcast = () => {
           <OutroSection />
         </Sequence>
       </AbsoluteFill>
+
+      {/* Chapter Progress Bar - MUST be outside scale(2) wrapper for correct sizing */}
+      <ChapterProgressBar
+        chapters={timing.sections}
+        totalFrames={timing.total_frames}
+      />
     </AbsoluteFill>
   )
 }
