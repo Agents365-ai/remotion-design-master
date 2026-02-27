@@ -10,6 +10,7 @@ export * from './spacing'
 export * from './shadows'
 export * from './radii'
 export * from './thumbnail'
+export * from './sizingTiers'
 
 // Re-export commonly used tokens as a combined object
 import { palette, semanticColors, gradients } from './colors'

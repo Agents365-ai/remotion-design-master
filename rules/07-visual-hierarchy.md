@@ -1,5 +1,24 @@
 # 07 - Visual Hierarchy
 
+## Section Title Positioning
+
+| Position | Style | Best For |
+|----------|-------|----------|
+| **Top-center** | Video style | Most video content (RECOMMENDED) |
+| **Top-left** | Presentation style | Business, formal content |
+| **Full-center** | Hero style | Hook, brand moments only |
+
+**Rule:** Maintain consistent title positioning within a single video.
+
+```
+Top-center (default):     Top-left:               Full-center:
+┌─────────────────────┐   ┌─────────────────────┐   ┌─────────────────────┐
+│    Section Title    │   │Section Title        │   │                     │
+│                     │   │                     │   │   SECTION TITLE     │
+│    [content]        │   │    [content]        │   │                     │
+└─────────────────────┘   └─────────────────────┘   └─────────────────────┘
+```
+
 ## Hierarchy Principles
 
 Visual hierarchy guides the viewer's eye in order of importance:
@@ -15,11 +34,12 @@ Visual hierarchy guides the viewer's eye in order of importance:
 In video, size differences must be dramatic:
 
 ```
-Hero: 100px     → Primary focus
-Title: 80px     → Section identity
-Subtitle: 56px  → Supporting context
-Body: 40px      → Details
-Caption: 32px   → Metadata
+Hero Max: 400px → Brand, single-word impact
+Hero: 220px     → Section titles
+Title: 140px    → Content titles
+Subtitle: 100px → Supporting context
+Body: 64px      → Details
+Caption: 48px   → Metadata
 ```
 
 **Rule:** Adjacent hierarchy levels should differ by at least 1.4x.

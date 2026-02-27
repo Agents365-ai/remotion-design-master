@@ -13,30 +13,41 @@ export const fontFamily = {
 } as const
 
 // Font sizes (1080p base)
+// NOTE: Video requires 2-4x larger text than web due to:
+// 1. Distance viewing (TV at 3m, phone at arm's length)
+// 2. Quick comprehension (3-5 seconds per scene)
+// 3. Compression artifacts degrade small text
 export const fontSize = {
-  // Display - for hero sections
-  hero: 100,       // Main hero title
-  display: 88,     // Large display text
+  // Display - for hero sections (INCREASED based on ScraplingVideo analysis)
+  heroMax: 400,    // Brand names, single-word maximum impact
+  hero: 220,       // Section titles (was 100)
+  display: 180,    // Large display text (was 88)
 
-  // Headings
-  title: 80,       // Section titles
-  subtitle: 56,    // Subtitles, secondary headings
-  heading: 48,     // Content headings
+  // Headings (INCREASED)
+  title: 140,      // Content titles (was 80)
+  subtitle: 100,   // Subtitles, secondary headings (was 56)
+  heading: 80,     // Content headings (was 48)
 
-  // Body
-  body: 40,        // Main body text
-  bodySmall: 36,   // Secondary body text
+  // Body (INCREASED)
+  body: 64,        // Main body text (was 40)
+  bodySmall: 56,   // Secondary body text (was 36)
 
-  // Caption
-  caption: 32,     // Captions, labels
-  small: 28,       // Small text
-  micro: 24,       // Very small (use sparingly)
+  // Caption (INCREASED)
+  caption: 48,     // Captions, labels (was 32)
+  small: 40,       // Small text (was 28)
+  micro: 32,       // Minimum readable (was 24)
 
-  // Data display
-  dataHero: 140,   // Single huge metric
-  dataLarge: 120,  // Large data numbers
-  data: 72,        // Standard data numbers
-  dataSmall: 56,   // Smaller data numbers
+  // Data display (SLIGHT INCREASE)
+  dataHero: 180,   // Single huge metric (was 140)
+  dataLarge: 140,  // Large data numbers (was 120)
+  data: 100,       // Standard data numbers (was 72)
+  dataSmall: 72,   // Smaller data numbers (was 56)
+
+  // Icons - NEW (for emoji and icon sizing)
+  iconHero: 200,   // Hero emoji (hook, brand moments)
+  iconLarge: 160,  // Feature icons
+  icon: 120,       // Standard icons
+  iconSmall: 80,   // Compact icons
 } as const
 
 // Font weights
@@ -73,11 +84,17 @@ export const letterSpacing = {
 
 // Typography presets - combine size, weight, line-height
 export const textStyles = {
+  heroMax: {
+    fontSize: fontSize.heroMax,
+    fontWeight: fontWeight.black,
+    lineHeight: lineHeight.none,
+    letterSpacing: -6,
+  },
   hero: {
     fontSize: fontSize.hero,
-    fontWeight: fontWeight.extrabold,
+    fontWeight: fontWeight.bold,
     lineHeight: lineHeight.tight,
-    letterSpacing: letterSpacing.tight,
+    letterSpacing: -6,
   },
   display: {
     fontSize: fontSize.display,

@@ -1,21 +1,36 @@
 # 04 - Typography Fundamentals
 
+## Why Video Text Is So Large
+
+Video requires 2-4x larger text than web because:
+
+1. **Distance viewing** - TV at 3m, phone at arm's length
+2. **Quick comprehension** - 3-5 seconds per scene to read
+3. **Compression artifacts** - Small text degrades, larger survives
+
 ## Type Scale for Video
 
-Video requires larger text than web. Our 1080p base scale:
+Our 1080p base scale (validated from ScraplingVideo production):
 
 | Element | Size | Weight | Use |
 |---------|------|--------|-----|
-| Hero | 100px | 800 | Single big statement |
-| Display | 88px | 700 | Large titles |
-| Title | 80px | 800 | Section headings |
-| Subtitle | 56px | 600 | Secondary headings |
-| Heading | 48px | 700 | Content headings |
-| Body | 40px | 500 | Main text |
-| Body Small | 36px | 400 | Secondary text |
-| Caption | 32px | 500 | Labels, metadata |
-| Data Large | 120px | 800 | Key metrics |
-| Data | 72px | 700 | Standard metrics |
+| Hero Max | 400px | 900 | Brand names, single-word maximum impact |
+| Hero | 220px | 700 | Section titles |
+| Display | 180px | 700 | Large display text |
+| Title | 140px | 800 | Content titles |
+| Subtitle | 100px | 600 | Secondary headings |
+| Heading | 80px | 700 | Content headings |
+| Body | 64px | 500 | Main body text |
+| Body Small | 56px | 400 | Secondary text |
+| Caption | 48px | 500 | Captions, labels |
+| Small | 40px | 400 | Small text |
+| Micro | 32px | 400 | Minimum readable |
+| Data Hero | 180px | 800 | Single huge metric |
+| Data Large | 140px | 800 | Large data numbers |
+| Data | 100px | 700 | Standard data numbers |
+| Icon Hero | 200px | - | Hero emoji |
+| Icon Large | 160px | - | Feature icons |
+| Icon | 120px | - | Standard icons |
 
 ## Font Weight Hierarchy
 
@@ -113,15 +128,41 @@ Good: Left-align long text, center only titles
 ### Tiny Text
 ```
 Bad:  Caption at 16px (unreadable on video)
-Good: Caption at 32px minimum
+Good: Caption at 48px minimum (32px absolute minimum)
+```
+
+## Content-Adaptive Sizing
+
+Use sizing tiers based on content density:
+
+| Tier | Items | Title Mult | Use Case |
+|------|-------|------------|----------|
+| Impact | 1 | 1.5x | Hook, hero, CTA |
+| Standard | 2-3 | 1.0x | Features, comparison |
+| Compact | 4-6 | 0.8x | Feature grid |
+| Dense | 6+ | 0.65x | Data tables |
+
+```ts
+import { sizingTiers, selectTier } from './tokens/sizingTiers'
+
+const tier = selectTier(itemCount)  // auto-select
+const adjustedTitle = fontSize.hero * sizingTiers[tier].title
 ```
 
 ## Quick Reference
 
 ```tsx
-// Title
+// Section Title (hero tier)
 <div style={{
-  fontSize: 80,
+  fontSize: 220,
+  fontWeight: 700,
+  lineHeight: 1.1,
+  letterSpacing: -6,
+}}>
+
+// Content Title
+<div style={{
+  fontSize: 140,
   fontWeight: 800,
   lineHeight: 1.1,
   letterSpacing: -2,
@@ -129,7 +170,7 @@ Good: Caption at 32px minimum
 
 // Body
 <div style={{
-  fontSize: 40,
+  fontSize: 64,
   fontWeight: 500,
   lineHeight: 1.5,
   letterSpacing: 0,
@@ -137,8 +178,8 @@ Good: Caption at 32px minimum
 
 // Data
 <div style={{
-  fontSize: 72,
-  fontWeight: 800,
+  fontSize: 100,
+  fontWeight: 700,
   lineHeight: 1,
   letterSpacing: -1,
 }}>

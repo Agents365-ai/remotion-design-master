@@ -56,10 +56,10 @@ Avoid placing text in bottom corners (duration, badges).
 
 | Ratio | Resolution | Usage |
 |-------|------------|-------|
-| 16:9 | 1920×1080 or 3840×2160 | Primary |
-| 4:3 | 1440×1080 or 2880×2160 | Alternative |
+| 16:9 | 1920×1080 or 3840×2160 | Playback page |
+| 4:3 | 1440×1080 or 2880×2160 | Recommendation feed |
 
-**Both ratios recommended** - Bilibili displays different ratios in different contexts.
+⚠️ **Both ratios MANDATORY** - Bilibili displays different ratios in different contexts. Missing either format causes broken thumbnails in certain UI locations.
 
 ## Thumbnail Component Template
 
@@ -161,4 +161,4 @@ export const thumbnailTokens = {
 - [ ] Title 140px+?
 - [ ] Icons 56px+?
 - [ ] No text in bottom corners?
-- [ ] Generated both 16:9 and 4:3?
+- [ ] Generated both 16:9 and 4:3? ⚠️ **MANDATORY**
