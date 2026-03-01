@@ -1,8 +1,8 @@
 # 15 - Thumbnail Design Guidelines (Bilibili)
 
-## Core Principle: Fill the Frame
+## Core Principle: Centered, Clean, Readable
 
-Thumbnails must **fill every pixel**. No empty space, no breathing room, no tiny centered text floating in whitespace. Content should press against the edges. The goal: at 170px wide on a phone screen, your thumbnail is still a punch in the eye.
+White background, all content centered vertically and horizontally. Large bold text dominates the frame. At 170px wide on a phone screen, the title must still be readable.
 
 ## Why Thumbnails Need Special Treatment
 
@@ -18,107 +18,80 @@ Chinese minimum readable: ~14px on screen
 → Chinese title must be ≥160px to be readable on mobile
 ```
 
+## Default Style: White Centered
+
+```
+┌──────────────────────────────────┐
+│                                  │
+│     🏷️标签A  🏷️标签B  🚀⚡🔥    │
+│                                  │
+│        视频封面标题                │
+│     副标题铺满整个画面宽度         │
+│                                  │
+└──────────────────────────────────┘
+```
+
+- **White background** (#ffffff)
+- All elements **centered** (flex column, justify-content: center, align-items: center)
+- Tags and icons in **same row**
+- Title below tags, subtitle below title
+- Minimal padding (40-50px)
+
 ## Font Size Rules
 
-All sizes are for **1080p design space** (with scale(2) to 4K):
+All sizes are for **1080p design space** (no scale(2) — Composition renders at 1920×1080 or 1200×900 directly):
 
 | Level | Size | Mobile Equivalent | Usage | Max Characters |
 |-------|------|-------------------|-------|----------------|
-| **L1 Title** | 200-300px | 18-27px | Core message, must be readable | 2-6 Chinese chars |
-| **L2 Subtitle** | 100-140px | 9-12px | Supporting info, readable | 4-8 chars |
-| **L3 Tags** | 72-96px | 6-8px | Color blocks with text | 2-4 chars per tag |
-| **Icons/Emoji** | 120-180px | 11-16px | Visual anchors | - |
+| **L1 Title** | 150-160px | 13-14px | Core message, must be readable | 2-6 Chinese chars |
+| **L2 Subtitle** | 56-60px | 5-6px | Supporting info | 4-10 chars |
+| **L3 Tags** | 40-44px | 4px | Color blocks with text | 2-4 chars per tag |
+| **Icons/Emoji** | 70-80px | 6-7px | Visual anchors next to tags | - |
 
 ### Chinese Typography Requirements
 
-- **Font weight**: 800-900 (extrabold/black) — thin strokes vanish at small sizes
-- **Font family**: PingFang SC, Noto Sans SC, Source Han Sans (clear strokes, free commercial use)
-- **Letter spacing**: 2-6px — Chinese needs breathing room between characters
+- **Font weight**: 900 (black) for title, 700 (bold) for subtitle and tags
+- **Font family**: PingFang SC, Noto Sans SC (clear strokes, free commercial use)
+- **Letter spacing**: 2-6px — Chinese needs breathing room
+- **Title color**: #1a1a2e (near-black, high contrast on white)
+- **Subtitle color**: #666 (medium gray)
 - **Never use**: Serif/Song fonts (stroke details disappear at thumbnail scale)
 
-## Layout: Fill the Screen
+## Layout Structure
+
+3 rows, all centered:
+
+```
+Row 1: Tags + Icons (same row, centered)
+Row 2: Title (large, centered, bold)
+Row 3: Subtitle (medium, centered, gray)
+```
+
+Gap between rows: 24px. Padding from edges: 40-50px.
 
 ### Element Budget: 2-5 elements maximum
 
 | Priority | Element | Role | Required? |
 |----------|---------|------|-----------|
 | P0 | Large title (2-6 chars) | "What is this" | Yes |
-| P1 | Visual focus (icon/face/data) | Grab attention | Yes |
-| P2 | 1-2 tags | Category/emotion | Optional |
-| P3 | Subtitle | Extra context | Optional |
-
-### Fill-the-Frame Patterns
-
-```
-Pattern A: Full-Bleed Title (most impactful)
-┌──────────────────────────────────┐
-│ 🏷️标签  🏷️标签                  │
-│                                  │
-│    大标题占满整个                  │
-│    画面宽度无留白                  │
-│                                  │
-│    副标题铺满底部区域              │
-└──────────────────────────────────┘
-→ Title uses 90%+ width, padding ≤20px
-
-Pattern B: Split Layout (text + visual)
-┌──────────────────────────────────┐
-│ 大标题大标题  │  📊              │
-│ 大标题大标题  │  大图标           │
-│              │  或数据           │
-│ 副标题铺满   │  占满右半          │
-└──────────────────────────────────┘
-→ Each half fills its space completely
-
-Pattern C: Data Hero (numbers as visual)
-┌──────────────────────────────────┐
-│  🏷️ 标签                        │
-│                                  │
-│        10x                       │
-│     超大数据铺满                  │
-│                                  │
-│   说明文字占满底部宽度            │
-└──────────────────────────────────┘
-→ Data number at 300-400px, fills center
-
-Pattern D: Full-Bleed Image + Overlay
-┌──────────────────────────────────┐
-│                                  │
-│     Background Image             │
-│     (cover entire frame)         │
-│                                  │
-│▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓│
-│  大白字铺满  🏷️标签  🏷️标签     │
-└──────────────────────────────────┘
-→ Dark gradient overlay, text spans full width
-```
-
-### Hard Constraints for Filling
-
-| Rule | Value | Reason |
-|------|-------|--------|
-| Content width | **≥90% of frame** | No tiny centered boxes |
-| Padding | **≤20px** | Maximize content area |
-| Title width | **≥85% of frame width** | Text should span the frame |
-| Background | **100% coverage** | No visible frame edges |
-| Element gaps | **≤24px** | Tight composition, not sparse |
+| P1 | Subtitle | Supporting context | Yes |
+| P2 | 1-3 tags | Category/keywords | Optional |
+| P3 | 1-3 icons/emoji | Visual anchors | Optional |
 
 ## Color Strategy
 
-Bilibili feed background is white/light gray (#f5f5f5). Your thumbnail must **contrast against the feed**.
-
-| Strategy | Feed Contrast | CTR Potential | Recommended |
-|----------|---------------|---------------|-------------|
-| **Dark bg + white text** | Highest | ⭐⭐⭐ | Default choice |
-| **Gradient bg + white text** | High | ⭐⭐⭐ | Premium feel |
-| **Saturated color + white text** | High | ⭐⭐ | Brand/series |
-| White bg + colored text | Low | ⭐ | Avoid |
-
-High-energy colors: red, orange, blue, purple. Avoid: gray, brown (low energy).
+| Element | Color | Notes |
+|---------|-------|-------|
+| Background | `#ffffff` | Clean white |
+| Title | `#1a1a2e` | Near-black, maximum contrast |
+| Subtitle | `#666666` | Medium gray, secondary hierarchy |
+| Tag text | `#f97316` | Orange, attention-grabbing |
+| Tag background | `rgba(249,115,22,0.1)` | Light orange tint |
+| Tag border | `3px solid rgba(249,115,22,0.3)` | Visible at small sizes |
 
 ## Safe Zones (4:3 + 16:9 dual crop)
 
-Bilibili uses 4:3 on mobile home, 16:9 elsewhere. Core content must survive both crops:
+Bilibili uses 4:3 on mobile home, 16:9 elsewhere. Core content must survive both crops. Centered layout naturally handles this — content stays in the safe zone.
 
 ```
 16:9 source (1920×1080)
@@ -126,24 +99,19 @@ Bilibili uses 4:3 on mobile home, 16:9 elsewhere. Core content must survive both
 │ ░░░│                              │░░░  │
 │ ░░░│    ★ SAFE ZONE ★             │░░░  │
 │ ░░░│    (center 80% × 85%)       │░░░  │
-│ ░░░│    All critical content here │░░░  │
+│ ░░░│    Centered content is safe  │░░░  │
 │ ░░░│                              │░░░  │
 │ ░░░│──────────────────────────────│░░░  │
 │ ░░░│ ⚠️ bottom 60px: B站 duration │░░░  │
 └─────────────────────────────────────────┘
-  ↑                                   ↑
-  Left 10% may be cropped        Right 10%
-  in 4:3 display                 may be cropped
 ```
-
-**Safe zone**: center **1536×918px** at 1080p (80% × 85% of frame).
 
 ## Bilibili Specs
 
 | Ratio | Resolution | Usage |
 |-------|------------|-------|
-| 16:9 | 1920×1080 or 3840×2160 | Playback page, desktop |
-| 4:3 | 1440×1080 or 2880×2160 | Mobile home feed |
+| 16:9 | 1920×1080 | Playback page, desktop |
+| 4:3 | 1200×900 | Mobile home feed |
 
 ⚠️ **Both ratios MANDATORY** — missing either causes broken display.
 
@@ -152,31 +120,38 @@ Bilibili uses 4:3 on mobile home, 16:9 elsewhere. Core content must survive both
 ```tsx
 export const thumbnailTokens = {
   fontSize: {
-    title: 260,        // L1: primary title (200-300px range)
-    titleCompact: 200,  // L1: when title has 5-6 chars
-    subtitle: 120,     // L2: supporting text
-    tag: 80,           // L3: tag labels
-    dataHero: 360,     // huge single number
-    icon: 140,         // emoji/icon size
+    title: 160,       // L1: primary title
+    titleCompact: 150, // L1: for 4:3 or longer titles
+    subtitle: 60,      // L2: supporting text
+    subtitleCompact: 56,
+    tag: 44,           // L3: tag labels
+    icon: 80,          // emoji/icon size
+  },
+  colors: {
+    background: '#ffffff',
+    title: '#1a1a2e',
+    subtitle: '#666666',
+    tagText: '#f97316',
+    tagBg: 'rgba(249,115,22,0.1)',
+    tagBorder: 'rgba(249,115,22,0.3)',
   },
   spacing: {
-    padding: 20,       // frame edge padding (minimal!)
-    tagGap: 16,        // between tags (tight)
-    elementGap: 20,    // between major elements (tight)
+    padding: '40px 50px',
+    rowGap: 24,
+    tagGap: 20,
   },
   fontWeight: {
-    title: 900,        // black — maximum impact
-    subtitle: 700,     // bold
-    tag: 700,          // bold
+    title: 900,
+    subtitle: 700,
+    tag: 700,
   },
   letterSpacing: {
-    title: 4,          // Chinese breathing room
+    title: 6,
     subtitle: 2,
   },
   borders: {
-    tag: '3px solid',  // visible at small sizes
-    card: '3px solid rgba(0,0,0,0.1)',
-    radius: 24,
+    tag: '3px solid',
+    tagRadius: 24,
   },
 }
 ```
@@ -184,80 +159,80 @@ export const thumbnailTokens = {
 ## Component Template
 
 ```tsx
-// Fill-the-frame thumbnail — dark gradient background
-export const Thumbnail = () => (
-  <AbsoluteFill style={{ background: 'linear-gradient(135deg, #0f0c29, #302b63, #24243e)', fontFamily: font }}>
-    <AbsoluteFill style={{
-      transform: 'scale(2)',
-      transformOrigin: 'top left',
-      width: '50%',
-      height: '50%'
+import { AbsoluteFill } from 'remotion'
+
+const font = "'PingFang SC', 'Noto Sans SC', sans-serif"
+
+export const Thumbnail = ({
+  title = '视频封面标题',
+  subtitle = '副标题铺满整个画面宽度区域',
+  tags = ['标签A', '标签B'],
+  icons = ['🚀', '⚡', '🔥'],
+}) => (
+  <AbsoluteFill style={{ background: '#ffffff', fontFamily: font }}>
+    <div style={{
+      position: 'absolute',
+      inset: 0,
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: '40px 50px',
+      gap: 24,
     }}>
-      <div style={{
-        position: 'absolute',
-        inset: 0,
-        padding: 20,
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-      }}>
-        {/* Tags - 80px, span full width */}
-        <div style={{ display: 'flex', gap: 16, marginBottom: 24 }}>
-          <div style={{
-            background: 'rgba(249,115,22,0.25)',
-            border: '3px solid rgba(249,115,22,0.4)',
+      {/* Tags + Icons row */}
+      <div style={{ display: 'flex', gap: 20, alignItems: 'center' }}>
+        {tags.map((tag, i) => (
+          <div key={i} style={{
+            background: 'rgba(249,115,22,0.1)',
+            border: '3px solid rgba(249,115,22,0.3)',
             borderRadius: 24,
-            padding: '12px 28px',
-            fontSize: 80,
+            padding: '14px 36px',
+            fontSize: 44,
             fontWeight: 700,
-            color: '#fb923c'
-          }}>标签</div>
-        </div>
-
-        {/* Main Title - 260px, fills width */}
-        <div style={{
-          fontSize: 260,
-          fontWeight: 900,
-          letterSpacing: 4,
-          color: '#fff',
-          lineHeight: 1.1,
-          width: '100%',
-        }}>
-          大标题占满
-        </div>
-
-        {/* Subtitle - 120px, fills width */}
-        <div style={{
-          fontSize: 120,
-          fontWeight: 700,
-          color: 'rgba(255,255,255,0.7)',
-          marginTop: 16,
-          width: '100%',
-        }}>
-          副标题铺满整个宽度
-        </div>
-
-        {/* Visual anchors - large icons */}
-        <div style={{ display: 'flex', gap: 24, marginTop: 32 }}>
-          <span style={{ fontSize: 140 }}>🚀</span>
-          <span style={{ fontSize: 140 }}>⚡</span>
-          <span style={{ fontSize: 140 }}>🔥</span>
-        </div>
+            color: '#f97316',
+          }}>{tag}</div>
+        ))}
+        {icons.map((icon, i) => (
+          <span key={i} style={{ fontSize: 80 }}>{icon}</span>
+        ))}
       </div>
-    </AbsoluteFill>
+
+      {/* Title */}
+      <div style={{
+        fontSize: 160,
+        fontWeight: 900,
+        letterSpacing: 6,
+        color: '#1a1a2e',
+        lineHeight: 1.2,
+        textAlign: 'center',
+      }}>
+        {title}
+      </div>
+
+      {/* Subtitle */}
+      <div style={{
+        fontSize: 60,
+        fontWeight: 700,
+        color: '#666',
+        letterSpacing: 2,
+        textAlign: 'center',
+      }}>
+        {subtitle}
+      </div>
+    </div>
   </AbsoluteFill>
 )
 ```
 
 ## Quick Checklist
 
-- [ ] Title ≥200px and spans ≥85% of frame width?
+- [ ] Title ≥150px and centered?
 - [ ] Total elements ≤5?
-- [ ] Font weight ≥800 for Chinese text?
-- [ ] Icons ≥120px?
-- [ ] Dark/gradient background (not white)?
-- [ ] Padding ≤20px (content pressed to edges)?
-- [ ] Core content within center safe zone (80%×85%)?
-- [ ] No text in bottom-right corner (B站 duration badge)?
+- [ ] Font weight ≥900 for title, ≥700 for subtitle?
+- [ ] White background (#ffffff)?
+- [ ] Tags + icons in same row?
+- [ ] All content centered (vertical + horizontal)?
+- [ ] No text in bottom-right corner area (B站 duration badge)?
 - [ ] Generated both 16:9 AND 4:3? ⚠️ **MANDATORY**
-- [ ] Tested at 170px width — still readable?
+- [ ] Tested at 170px width — title still readable?
