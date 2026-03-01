@@ -45,7 +45,8 @@ export const Tag: React.FC<TagProps> = ({
   theme,
   style,
 }) => {
-  const bgColor = background ?? (theme?.colors.accent ?? tokens.colors.accent) + '20' // 20% opacity
+  const baseColor = theme?.colors.accent ?? tokens.colors.accent
+  const bgColor = background ?? `${baseColor}33` // ~20% opacity (hex 33/FF)
   const textColor = color ?? theme?.colors.accent ?? tokens.colors.accent
   const sizeStyle = sizeStyles[size]
 

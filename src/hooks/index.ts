@@ -4,7 +4,7 @@
 
 export { useTheme, useThemeColors, useThemeTypography, useThemeSpacing, ThemeProvider, default as useThemeDefault } from './useTheme'
 export {
-  useProgress,
+  useAnimationProgress,
   useFade,
   useSlide,
   useScale,

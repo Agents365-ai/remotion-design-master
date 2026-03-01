@@ -72,7 +72,7 @@ export const CircleIcon: React.FC<IconProps & { bgColor?: string }> = ({
 }) => (
   <Icon
     {...props}
-    background={bgColor ?? (theme?.colors.accent ?? tokens.colors.accent) + '15'}
+    background={bgColor ?? `${theme?.colors.accent ?? tokens.colors.accent}26`} // ~15% opacity (hex 26/FF)
     rounded
   />
 )

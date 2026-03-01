@@ -18,7 +18,7 @@ interface UseAnimationOptions {
 /**
  * Basic progress animation (0 to 1)
  */
-export function useProgress(options: UseAnimationOptions = {}) {
+export function useAnimationProgress(options: UseAnimationOptions = {}) {
   const frame = useCurrentFrame()
   const { delay = 0, duration = 30, easing = Easing.out(Easing.cubic) } = options
 
@@ -33,7 +33,7 @@ export function useProgress(options: UseAnimationOptions = {}) {
  * Fade animation (opacity)
  */
 export function useFade(options: UseAnimationOptions = {}) {
-  return useProgress(options)
+  return useAnimationProgress(options)
 }
 
 /**
@@ -44,7 +44,7 @@ export function useSlide(
   distance: number = 30,
   options: UseAnimationOptions = {}
 ) {
-  const progress = useProgress(options)
+  const progress = useAnimationProgress(options)
 
   const offset = interpolate(progress, [0, 1], [distance, 0])
 
@@ -116,4 +116,4 @@ export function useSectionProgress() {
   return frame / durationInFrames
 }
 
-export default useProgress
+export default useAnimationProgress

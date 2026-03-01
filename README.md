@@ -14,7 +14,7 @@ This skill provides design principles, reusable components, and visual guideline
 - Layout components with "fill the screen" constraints
 - Animation primitives (FadeIn, SpringPop, SlideIn, Reveal, Typewriter)
 - Section patterns (HeroSection, FeatureList, DataDashboard, etc.)
-- 14 design rule documents
+- 15 design rule documents
 - Ready-to-use templates and examples
 
 ## Installation
@@ -63,7 +63,7 @@ cp -r remotion-design-master/src/* your-project/src/remotion/design/
 
 Once installed, the AI assistant will automatically:
 
-1. **Apply design rules** - Follow the 14 design principles in `rules/` when creating video components
+1. **Apply design rules** - Follow the 15 design principles in `rules/` when creating video components
 2. **Use design tokens** - Reference centralized colors, typography, spacing from `src/tokens/`
 3. **Suggest components** - Recommend appropriate layout, animation, and UI components
 4. **Enforce constraints** - Ensure "fill the screen" layout and other hard constraints
@@ -126,11 +126,11 @@ export const MyVideo = () => (
 remotion-design-master/
 ├── SKILL.md              # Main entry, design philosophy
 ├── CLAUDE.md             # Project instructions
-├── rules/                # 14 design principle documents
+├── rules/                # 15 design principle documents
 │   ├── 01-color-theory.md
 │   ├── 02-color-palettes.md
 │   ├── ...
-│   └── 14-responsive-video.md
+│   └── 15-thumbnail-design.md
 ├── src/
 │   ├── tokens/           # Design tokens
 │   ├── themes/           # Theme presets
@@ -233,7 +233,7 @@ Every component enforces these rules:
 1. **Root container**: `position: absolute; inset: 0; overflow: hidden`
 2. **Media**: `objectFit: cover` (use DualLayerMedia for non-16:9)
 3. **Content width**: ≥85% of screen
-4. **Title size**: ≥80px
+4. **Title size**: ≥140px
 5. **Bottom margin**: 100px subtitle safe area
 
 **Forbidden patterns:**

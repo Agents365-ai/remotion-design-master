@@ -34,10 +34,10 @@ const HeroSection = () => (
 ## Design Philosophy
 
 ### 1. Fill the Screen
-Content uses 85-95% of screen width. No tiny centered boxes. Titles ≥80px.
+Content uses 85-95% of screen width. No tiny centered boxes. Titles ≥140px.
 
 ### 2. Data as Hero
-Large numbers (72-120px), bold typography, clear visual hierarchy.
+Large numbers (100-180px), bold typography, clear visual hierarchy.
 
 ### 3. Purposeful Animation
 Every motion serves communication. Fade-ins guide attention. Counters emphasize data.
@@ -54,7 +54,7 @@ These rules are non-negotiable for professional output:
 | Root container | `position: absolute; inset: 0; overflow: hidden` | Fill entire frame |
 | Media | `objectFit: cover` or DualLayerMedia | No black bars |
 | Content width | ≥85% screen | No tiny centered boxes |
-| Title size | ≥80px | Visual impact |
+| Title size | ≥140px | Visual impact |
 | Page padding | ≤50px | Maximize content area |
 | Bottom margin | 100px | Subtitle safe zone |
 | 4K output | `transform: scale(2)` wrapper | 1080p design → 4K render |
@@ -147,7 +147,7 @@ import { colors, fontSize, spacing, shadows } from './tokens'
 
 ## Documentation
 
-- `rules/` - 14 design principle documents
+- `rules/` - 15 design principle documents
 - `docs/getting-started.md` - Setup guide
 - `docs/color-guide.md` - Color theory and palettes
 - `docs/typography-guide.md` - Font pairing and hierarchy
