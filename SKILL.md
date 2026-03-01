@@ -1,3 +1,10 @@
+---
+name: remotion-design-master
+description: Comprehensive design system and component library for creating beautiful Remotion videos with professional layouts, typography, animations, and themes
+metadata:
+  tags: remotion, video, design-system, components, animation, themes, typography
+---
+
 # Remotion Design Master
 
 A comprehensive design system and component library for creating beautiful Remotion videos.

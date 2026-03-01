@@ -24,6 +24,8 @@ interface ChapterProgressBarProps {
   totalFrames: number
   /** Bar height */
   height?: number
+  /** Label font size */
+  labelFontSize?: number
   /** Active chapter color */
   activeColor?: string
   /** Completed chapter color */
@@ -40,6 +42,7 @@ export const ChapterProgressBar: React.FC<ChapterProgressBarProps> = ({
   chapters,
   totalFrames,
   height = 130,
+  labelFontSize = 32,
   activeColor,
   completedColor,
   upcomingColor,
@@ -122,7 +125,7 @@ export const ChapterProgressBar: React.FC<ChapterProgressBarProps> = ({
                 position: 'relative',
                 zIndex: 1,
                 color: isActive ? '#fff' : isPast ? colors.text : colors.textMuted,
-                fontSize: fontSize.subtitle,
+                fontSize: labelFontSize,
                 fontWeight: isActive ? fontWeight.bold : fontWeight.medium,
                 whiteSpace: 'nowrap',
                 overflow: 'hidden',
